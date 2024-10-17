@@ -45,15 +45,17 @@ plugin "beancount.plugins.tag_pending"
   Assets:Receivable  -2000.00 CNY
   Assets:Cash
 
-2021-08-08 commodity HDD-4TB
-  name: "4TB"
+2021-08-08 commodity Seagate-HDD-4TB
+  name: "Seagate 4TB HDD"
+  serial: "S1Z1LKNP"
+  holder: "@shankerwangmiao"
   asset-class: "device"
 
 2016-03-21 * "购买 4T 硬盘一枚"
   serial: "#2"
   time: "14:47:00"
   Assets:Cash     -1350.00 CNY
-  Equity:Fixed           1 HDD-4TB { 1350.00 CNY }
+  Equity:Fixed           1 Seagate-HDD-4TB { 1350.00 CNY }
 
 2016-03-22 * "Haskell 讲座海报，大鹰" "Haskell 讲座海报，大鹰垫付" ^2016-haskell
   serial: "#3"
@@ -826,6 +828,7 @@ plugin "beancount.plugins.tag_pending"
 
 2021-08-08 commodity EVO-870-8TB
   name: "Samsung EVO 870 8TB SSD"
+  holder: "bravo-mirrors"
   asset-class: "device"
 
 2021-08-08 * "购买 8T SSD 5块，用于镜像站服务器"
