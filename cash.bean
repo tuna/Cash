@@ -317,17 +317,17 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash    -700.00 CNY
   Liabilities:Payable
 
-2018-02-04 * "贴纸，姚沛然" "贴纸，姚沛然垫付"
+2018-02-04 * "姚沛然" "贴纸，姚沛然垫付"
   time: "19:13:00"
   Liabilities:Payable   -690.00 CNY
   Expenses:Operation
 
-2018-02-04 * "钥匙扣，姚沛然" "钥匙扣，姚沛然垫付"
+2018-02-04 * "姚沛然" "钥匙扣，姚沛然垫付"
   time: "19:13:00"
   Liabilities:Payable   -135.00 CNY
   Expenses:Operation
 
-2018-03-08 * "招新海报，姚沛然" "招新海报，姚沛然垫付"
+2018-03-08 * "姚沛然" "招新海报，姚沛然垫付"
   time: "16:48:00"
   Liabilities:Payable   -161.00 CNY
   Expenses:Operation
@@ -347,12 +347,12 @@ plugin "beancount.plugins.auto_accounts"
   Income:Donation  -1000.00 CNY
   Assets:Cash
 
-2018-05-25 * "Pero " "Pero 捐赠"
+2018-05-25 * "Pero" "Pero 捐赠"
   time: "18:12:00"
   Income:Donation  -1000.00 CNY
   Assets:Cash
 
-2018-05-25 * "Fedora Release Party 海报，姚沛然" "Fedora Release Party 海报，姚沛然垫付"
+2018-05-25 * "姚沛然" "Fedora Release Party 海报，姚沛然垫付"
   time: "18:12:30"
   Liabilities:Payable   -115.00 CNY
   Expenses:Operation
@@ -382,7 +382,7 @@ plugin "beancount.plugins.auto_accounts"
   Income:Donation  -1000.00 CNY
   Assets:Cash
 
-2018-09-08 * "六边形贴纸，姚沛然" "六边形贴纸，姚沛然垫付"
+2018-09-08 * "姚沛然" "六边形贴纸，姚沛然垫付"
   time: "19:58:00"
   Liabilities:Payable   -400.00 CNY
   Expenses:Operation
@@ -397,7 +397,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -945.00 CNY
   Expenses:Entertainment
 
-2018-09-21 * "招新及SFD海报、展板，姚沛然" "招新及SFD海报、展板，姚沛然垫付"
+2018-09-21 * "姚沛然" "招新及SFD海报、展板，姚沛然垫付"
   time: "16:25:00"
   Liabilities:Payable   -633.50 CNY
   Expenses:Operation
@@ -412,12 +412,12 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1038.00 CNY
   Expenses:Entertainment
 
-2018-10-02 * "易拉宝，姚沛然" "易拉宝，姚沛然垫付"
+2018-10-02 * "姚沛然" "易拉宝，姚沛然垫付"
   time: "11:20:00"
   Liabilities:Payable   -110.00 CNY
   Expenses:Operation
 
-2018-10-02 * "招新午饭外卖，姚沛然" "招新午饭外卖，姚沛然垫付"
+2018-10-02 * "姚沛然" "招新午饭外卖，姚沛然垫付"
   time: "11:25:00"
   Liabilities:Payable   -335.50 CNY
   Expenses:Operation
@@ -427,12 +427,12 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash    -445.50 CNY
   Liabilities:Payable
 
-2018-10-12 * "徽章及钥匙扣，姚沛然" "徽章及钥匙扣，姚沛然垫付"
+2018-10-12 * "姚沛然" "徽章及钥匙扣，姚沛然垫付"
   time: "21:24:00"
   Liabilities:Payable   -135.00 CNY
   Expenses:Operation
 
-2018-10-12 * "新版贴纸，姚沛然" "新版贴纸，姚沛然垫付"
+2018-10-12 * "姚沛然" "新版贴纸，姚沛然垫付"
   time: "21:24:00"
   Liabilities:Payable   -690.00 CNY
   Expenses:Operation
@@ -447,7 +447,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -732.00 CNY
   Expenses:Entertainment
 
-2018-10-18 * "10-18 晚聚餐 @巴依老爷，党凡" "10-18 晚聚餐 @巴依老爷，党凡垫付"
+2018-10-18 * "党凡" "10-18 晚聚餐 @巴依老爷，党凡垫付"
   time: "22:59:00"
   Liabilities:Payable     -474.00 CNY
   Expenses:Entertainment
@@ -457,7 +457,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -474.00 CNY
   Liabilities:Payable
 
-2018-10-21 * "10-20晚 tunight前聚餐 @澜园，姚沛然" "10-20晚 tunight前聚餐 @澜园，姚沛然垫付"
+2018-10-21 * "姚沛然" "10-20晚 tunight前聚餐 @澜园，姚沛然垫付"
   time: "20:18:00"
   Liabilities:Payable     -196.00 CNY
   Expenses:Entertainment
@@ -492,17 +492,17 @@ plugin "beancount.plugins.auto_accounts"
   Income:University  -825.00 CNY
   Assets:Cash
 
-2018-12-18 * "开徽章、贴纸发票，姚沛然" "开徽章、贴纸发票，姚沛然垫付"
+2018-12-18 * "姚沛然" "开徽章、贴纸发票，姚沛然垫付"
   time: "21:09:00"
   Liabilities:Payable   -50.00 CNY
   Expenses:Operation
 
-2018-12-18 * "12-18晚 TCP网络优化讨论，姚沛然" "12-18晚 TCP网络优化讨论，姚沛然垫付"
+2018-12-18 * "姚沛然" "12-18晚 TCP网络优化讨论，姚沛然垫付"
   time: "21:11:00"
   Liabilities:Payable     -43.00 CNY
   Expenses:Entertainment
 
-2018-12-22 * "12-22 晚 站点比萨聚餐，党凡" "12-22 晚 站点比萨聚餐，党凡垫付"
+2018-12-22 * "党凡" "12-22 晚 站点比萨聚餐，党凡垫付"
   time: "20:31:00"
   Liabilities:Payable     -806.00 CNY
   Expenses:Entertainment
@@ -527,17 +527,17 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1860.00 CNY
   Expenses:Entertainment
 
-2019-02-23 * "02-23 中午，外卖 党凡" "02-23 中午，外卖 党凡垫付"
+2019-02-23 * "党凡" "02-23 中午，外卖 党凡垫付"
   time: "13:09:16"
   Liabilities:Payable     -392.00 CNY
   Expenses:Entertainment
 
-2019-02-23 * "02-23 蛋糕 党凡" "02-23 蛋糕 党凡垫付"
+2019-02-23 * "党凡" "02-23 蛋糕 党凡垫付"
   time: "13:09:16"
   Liabilities:Payable     -148.00 CNY
   Expenses:Entertainment
 
-2019-02-23 * "02-23 轰趴 刘晓义" "02-23 轰趴 刘晓义垫付"
+2019-02-23 * "刘晓义" "02-23 轰趴 刘晓义垫付"
   time: "13:09:16"
   Liabilities:Payable     -1380.00 CNY
   Expenses:Entertainment
@@ -552,7 +552,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1380.00 CNY
   Liabilities:Payable
 
-2019-03-06 * "招新海报，刘一芃" "招新海报，刘一芃垫付"
+2019-03-06 * "刘一芃" "招新海报，刘一芃垫付"
   time: "21:00:00"
   Liabilities:Payable   -67.50 CNY
   Expenses:Operation
@@ -577,22 +577,22 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash    -298.00 CNY
   Assets:Receivable
 
-2019-09-05 * "聚餐@五道口，续本达" "聚餐@五道口，续本达垫付"
+2019-09-05 * "续本达" "聚餐@五道口，续本达垫付"
   time: "18:40:00"
   Liabilities:Payable     -511.00 CNY
   Expenses:Entertainment
 
-2019-09-09 * "开学前聚餐@玉树，余欣健" "开学前聚餐@玉树，余欣健垫付"
+2019-09-09 * "余欣健" "开学前聚餐@玉树，余欣健垫付"
   time: "19:00:00"
   Liabilities:Payable     -573.00 CNY
   Expenses:Entertainment
 
-2019-09-15 * "招新用贴纸印刷，陈晟祺" "招新用贴纸印刷，陈晟祺垫付"
+2019-09-15 * "陈晟祺" "招新用贴纸印刷，陈晟祺垫付"
   time: "19:30:00"
   Liabilities:Payable   -850.00 CNY
   Expenses:Operation
 
-2019-09-20 * "晚饭招新聚餐570，党凡" "晚饭招新聚餐570，党凡垫付"
+2019-09-20 * "党凡" "晚饭招新聚餐570，党凡垫付"
   time: "19:00:00"
   Liabilities:Payable     -570.00 CNY
   Expenses:Entertainment
@@ -622,12 +622,12 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1385.00 CNY
   Expenses:Entertainment
 
-2019-11-08 * "制作新易拉宝，陈晟祺" "制作新易拉宝，陈晟祺垫付"
+2019-11-08 * "陈晟祺" "制作新易拉宝，陈晟祺垫付"
   time: "09:00:00"
   Liabilities:Payable   -80.00 CNY
   Expenses:Operation
 
-2019-12-13 * "小聚，党凡" "小聚，党凡垫付"
+2019-12-13 * "党凡" "小聚，党凡垫付"
   time: "20:00:00"
   Liabilities:Payable     -658.00 CNY
   Expenses:Entertainment
@@ -667,17 +667,17 @@ plugin "beancount.plugins.auto_accounts"
   Income:Donation      -4378.80 CNY
   Assets:Cash:不干正事专用
 
-2020-09-29 * "百团午餐，dram " "百团午餐，dram 垫付"
+2020-09-29 * "dram" "百团午餐，dram 垫付"
   time: "12:30:00"
   Liabilities:Payable     -144.00 CNY
   Expenses:Entertainment
 
-2020-09-29 * "招新后聚餐，陈晟祺垫付 380，高一川" "招新后聚餐，陈晟祺垫付 380，高一川垫付 150"
+2020-09-29 * "陈晟祺 高一川" "招新后聚餐，陈晟祺垫付 380，高一川垫付 150"
   time: "20:00:00"
   Liabilities:Payable     -530.00 CNY
   Expenses:Entertainment
 
-2020-09-30 * "百团午餐+奶茶，陈晟祺" "百团午餐+奶茶，陈晟祺垫付"
+2020-09-30 * "陈晟祺" "百团午餐+奶茶，陈晟祺垫付"
   time: "12:30:00"
   Liabilities:Payable     -143.50 CNY
   Expenses:Entertainment
@@ -707,7 +707,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1677.30 CNY
   Expenses:Entertainment
 
-2021-07-02 * "王邈、Aron、续本达" "王邈、Aron、续本达捐赠"
+2021-07-02 * "王邈 Aron 续本达" "王邈、Aron、续本达捐赠"
   time: "17:00:00"
   Income:Donation  -16800.00 CNY
   Assets:Cash
@@ -732,12 +732,12 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -3166.00 CNY
   Liabilities:Payable
 
-2021-09-02 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠"
+2021-09-02 * "Felix Yan 代 PLCT" "Felix Yan 代 PLCT 捐赠"
   time: "22:00:00"
   Income:Donation  -5000.00 CNY
   Assets:Cash
 
-2021-09-02 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠"
+2021-09-02 * "Felix Yan 代 PLCT" "Felix Yan 代 PLCT 捐赠"
   time: "22:00:00"
   Income:Donation      -5000.00 CNY
   Assets:Cash:不干正事专用
@@ -772,7 +772,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -913.00 CNY
   Liabilities:Payable
 
-2021-11-05 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠（不限用途）"
+2021-11-05 * "Felix Yan 代 PLCT" "Felix Yan 代 PLCT 捐赠（不限用途）"
   time: "16:00:00"
   Income:Donation  -5000.00 CNY
   Assets:Cash
@@ -827,7 +827,7 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -2049.48 CNY
   Liabilities:Payable
 
-2022-12-27 * "shanker " "shanker 捐赠"
+2022-12-27 * "shanker" "shanker 捐赠"
   time: "17:20:00"
   Income:Donation      -256.90 CNY
   Assets:Cash:不干正事专用
@@ -842,17 +842,17 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash         -5000.00 CNY
   Assets:Cash:不干正事专用
 
-2023-03-05 * "2023 春百团招新工作餐，Pwe " "2023 春百团招新工作餐，Pwe 垫付"
+2023-03-05 * "Pwe" "2023 春百团招新工作餐，Pwe 垫付"
   time: "18:10:00"
   Assets:Cash:不干正事专用  -1681.60 CNY
   Expenses:Entertainment
 
-2023-03-05 * "迎新会聚餐 @日昌，Pwe " "迎新会聚餐 @日昌，Pwe 垫付"
+2023-03-05 * "Pwe" "迎新会聚餐 @日昌，Pwe 垫付"
   time: "18:10:00"
   Assets:Cash:不干正事专用  -1794.49 CNY
   Expenses:Entertainment
 
-2023-03-05 * "Pwe " "Pwe 捐赠"
+2023-03-05 * "Pwe" "Pwe 捐赠"
   time: "18:30:00"
   Income:Donation      -3000.00 CNY
   Assets:Cash:不干正事专用
@@ -882,17 +882,17 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -1189.80 CNY
   Liabilities:Payable
 
-2024-02-29 * "2024 春季百团易拉宝，喵喵" "2024 春季百团易拉宝，喵喵垫付"
+2024-02-29 * "喵喵" "2024 春季百团易拉宝，喵喵垫付"
   time: "18:48:00"
   Liabilities:Payable   -160.00 CNY
   Expenses:Operation
 
-2024-03-07 * "2024 春季百团摊位工作餐，喵喵" "2024 春季百团摊位工作餐，喵喵垫付"
+2024-03-07 * "喵喵" "2024 春季百团摊位工作餐，喵喵垫付"
   time: "12:00:00"
   Liabilities:Payable     -572.10 CNY
   Expenses:Entertainment
 
-2024-10-12 * "Tunight 后聚餐（丰茂烤串），@Harry " "Tunight 后聚餐（丰茂烤串），@Harry 垫付"
+2024-10-12 * "Harry" "Tunight 后聚餐（丰茂烤串），@Harry 垫付"
   time: "23:00:00"
   Liabilities:Payable     -663.60 CNY
   Expenses:Entertainment
