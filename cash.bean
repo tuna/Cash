@@ -5,23 +5,31 @@
 option "title" "TUNA Cash Ledger"
 option "operating_currency" "CNY"
 option "infer_tolerance_from_cost" "True"
+option "inferred_tolerance_default" "CNY:0.1"
 option "insert_pythonpath" "True"
 
 plugin "beancount.plugins.tag_pending"
-plugin "beancount.plugins.auto_accounts"
 
 2000-01-01 open Assets:Cash
-2000-01-01 open Assets:Cash:专项经费 ; 团委代管
-2000-01-01 open Assets:Receivable
-2000-01-01 open Assets:Fixed ; 固定资产
+2016-01-01 open  Assets:Cash:专项经费 ; 团委代管
+2016-07-01 close Assets:Cash:专项经费
+2018-05-25 open Assets:Cash:不干正事专用
 
-2000-01-01 open Liabilities:Payable
+2000-01-01 open Assets:Receivable ; 应收账款（如待报销）
 
-2000-01-01 open Expenses:Operation
-2000-01-01 open Expenses:Entertainment
-2000-01-01 open Expenses:Misc
+2000-01-01 open Liabilities:Payable ; 应付账款（如垫付）
 
-2000-01-01 open Income:University
+2000-01-01 open Expenses:Operation ; 日常运营支出
+2000-01-01 open Expenses:Entertainment ; 吃喝玩乐支出
+2000-01-01 open Expenses:Misc ; 其他无法归类支出
+
+2000-01-01 open Income:University ; 学校经费、报销等
+2000-01-01 open Income:External ; 外部收入
+2000-01-01 open Income:Donation ; 捐赠
+2000-01-01 open Income:Awards ; 奖金
+
+2000-01-01 open Equity:Bad ; 坏账
+2000-01-01 open Equity:Fixed ; 固定资产
 
 * Contents
 
@@ -37,11 +45,15 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Receivable  -2000.00 CNY
   Assets:Cash
 
+2021-08-08 commodity HDD-4TB
+  name: "4TB"
+  asset-class: "device"
+
 2016-03-21 * "购买 4T 硬盘一枚"
   serial: "#2"
   time: "14:47:00"
   Assets:Cash     -1350.00 CNY
-  Assets:Fixed
+  Equity:Fixed           1 HDD-4TB { 1350.00 CNY }
 
 2016-03-22 * "Haskell 讲座海报，大鹰" "Haskell 讲座海报，大鹰垫付" ^2016-haskell
   serial: "#3"
@@ -58,14 +70,14 @@ plugin "beancount.plugins.auto_accounts"
 2016-04-10 * "“金枪鱼”技术沙龙专项经费"
   serial: "#5"
   time: "00:00:00"
-  Income:University             -445 CNY
-  Assets:Cash:专项经费:技术沙龙
+  Income:University             -445.00 CNY
+  Assets:Cash:专项经费
 
 2016-04-10 * "“金枪鱼”流动图书馆专项经费"
   serial: "#6"
   time: "00:00:00"
-  Income:University              -273 CNY
-  Assets:Cash:专项经费:流动图书馆
+  Income:University              -273.00 CNY
+  Assets:Cash:专项经费
 
 2016-04-11 * "推广收入"
   serial: "#7"
@@ -77,7 +89,7 @@ plugin "beancount.plugins.auto_accounts"
   serial: "#8"
   time: "19:00:00"
   Liabilities:Payable   -282.50 CNY
-  Assets:Fixed
+  Equity:Fixed
 
 ; 2016-04-24 * "#9 应从 团委代管Assets:Cash:专项经费:流动图书馆 中报销"
 ;   time: "20:38:00"
@@ -87,7 +99,7 @@ plugin "beancount.plugins.auto_accounts"
 2016-04-24 * "报销 #8" ^2016-lib
   serial: "#9"
   time: "20:38:00"
-  Assets:Cash:专项经费:流动图书馆    -282.50 CNY
+  Assets:Cash:专项经费    -282.50 CNY
   Liabilities:Payable
 
 2016-05-10 * "康哥赞助"
@@ -131,6 +143,9 @@ plugin "beancount.plugins.auto_accounts"
   time: "14:25:00"
   Assets:Cash    -69.00 CNY
   Liabilities:Payable
+
+2016-06-30 pad Assets:Cash:专项经费 Equity:Bad
+2016-07-01 balance Assets:Cash:专项经费 0.00 CNY
 
 2016-09-10 * "姚沛然" "印制 TUNA 协会招新海报，姚沛然垫付" ^2016-fall-baituan
   serial: "#18"
@@ -630,7 +645,8 @@ plugin "beancount.plugins.auto_accounts"
   serial: "#298"
   time: "07:30:00"
   Assets:Cash    -298.00 CNY
-  Assets:Receivable
+  ; Assets:Receivable ; 看起来很难找学校报销
+  Expenses:Misc
 
 2019-09-05 * "续本达" "聚餐@五道口，续本达垫付"
   serial: "#101"
@@ -808,11 +824,15 @@ plugin "beancount.plugins.auto_accounts"
   Assets:Cash:不干正事专用  -17500.00 CNY
   Assets:Cash
 
+2021-08-08 commodity EVO-870-8TB
+  name: "Samsung EVO 870 8TB SSD"
+  asset-class: "device"
+
 2021-08-08 * "购买 8T SSD 5块，用于镜像站服务器"
   serial: "#130"
   time: "18:10:00"
   Assets:Cash     -29481.47 CNY
-  Assets:Fixed
+  Equity:Fixed            5 EVO-870-8TB { 5896.30 CNY }
 
 2021-08-08 * "报销 #128"
   serial: "#131"
