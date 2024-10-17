@@ -1,0 +1,900 @@
+;; -*- mode: beancount -*-
+
+* Options
+
+option "title" "TUNA Cash Ledger"
+option "operating_currency" "CNY"
+option "infer_tolerance_from_cost" "True"
+option "insert_pythonpath" "True"
+
+plugin "beancount.plugins.tag_pending"
+plugin "beancount.plugins.auto_accounts"
+
+2000-01-01 open Assets:Cash
+2000-01-01 open Assets:Cash:专项经费 ; 团委代管
+2000-01-01 open Assets:Receivable
+2000-01-01 open Assets:Fixed ; 固定资产
+
+2000-01-01 open Liabilities:Payable
+
+2000-01-01 open Expenses:Operation
+2000-01-01 open Expenses:Entertainment
+2000-01-01 open Expenses:Misc
+
+2000-01-01 open Income:University
+
+* Contents
+
+2016-03-05 * "C 社" "C 社捐赠，款项暂存大鹰处"
+  serial: "#0"
+  time: "00:00:00"
+  Income:Donation  -2000.00 CNY
+  Assets:Receivable
+
+2016-03-20 * "从大鹰处收回款项 #0"
+  serial: "#1"
+  time: "16:58:00"
+  Assets:Receivable  -2000.00 CNY
+  Assets:Cash
+
+2016-03-21 * "购买 4T 硬盘一枚"
+  serial: "#2"
+  time: "14:47:00"
+  Assets:Cash     -1350.00 CNY
+  Assets:Fixed
+
+2016-03-22 * "Haskell 讲座海报，大鹰" "Haskell 讲座海报，大鹰垫付" ^2016-haskell
+  serial: "#3"
+  time: "19:12:00"
+  Liabilities:Payable   -138.00 CNY
+  Expenses:Operation
+
+2016-03-22 * "无票据小额报销 #3" ^2016-haskell
+  serial: "#4"
+  time: "19:37:00"
+  Assets:Cash    -138.00 CNY
+  Liabilities:Payable
+
+2016-04-10 * "“金枪鱼”技术沙龙专项经费"
+  serial: "#5"
+  time: "00:00:00"
+  Income:University             -445 CNY
+  Assets:Cash:专项经费:技术沙龙
+
+2016-04-10 * "“金枪鱼”流动图书馆专项经费"
+  serial: "#6"
+  time: "00:00:00"
+  Income:University              -273 CNY
+  Assets:Cash:专项经费:流动图书馆
+
+2016-04-11 * "推广收入"
+  serial: "#7"
+  time: "14:22:00"
+  Income:External  -450.00 CNY
+  Assets:Cash
+
+2016-04-23 * "大鹰" "金枪鱼图书馆第一期购入书目，大鹰垫付" ^2016-lib
+  serial: "#8"
+  time: "19:00:00"
+  Liabilities:Payable   -282.50 CNY
+  Assets:Fixed
+
+; 2016-04-24 * "#9 应从 团委代管Assets:Cash:专项经费:流动图书馆 中报销"
+;   time: "20:38:00"
+;   待报销Assets:Cash  -282.50 CNY
+;   Assets:Receivable
+
+2016-04-24 * "报销 #8" ^2016-lib
+  serial: "#9"
+  time: "20:38:00"
+  Assets:Cash:专项经费:流动图书馆    -282.50 CNY
+  Liabilities:Payable
+
+2016-05-10 * "康哥赞助"
+  serial: "#11"
+  time: "15:27:00"
+  Income:Donation  -400.00 CNY
+  Assets:Cash
+
+2016-05-15 * "大鹰" "NSD2016 海报+大展板，大鹰垫付" ^2016-nsd
+  serial: "#12"
+  time: "12:00:00"
+  Liabilities:Payable   -464.00 CNY
+  Expenses:Operation
+
+2016-05-15 * "印制 TUNA 贴纸，大鹰" "印制 TUNA 贴纸，大鹰垫付" ^2016-nsd
+  serial: "#13"
+  time: "12:00:00"
+  Liabilities:Payable   -370.00 CNY
+  Expenses:Operation
+
+2016-05-15 * "报销 #12, #13" ^2016-nsd
+  serial: "#14"
+  time: "13:11:00"
+  Assets:Cash    -834.00 CNY
+  Liabilities:Payable
+
+2016-05-26 * "印制 Ubuntu 16.04 Release Party 海报" ^2016-ubuntu-rp
+  serial: "#15"
+  time: "12:00:00"
+  Liabilities:Payable   -69.00 CNY
+  Expenses:Operation
+
+2016-05-29 * "BLUG老梁个人" "BLUG老梁个人捐赠"
+  serial: "#16"
+  time: "19:30:00"
+  Income:Donation  -42.00 CNY
+  Assets:Cash
+
+2016-06-03 * "报销 #15" ^2016-ubuntu-rp
+  serial: "#17"
+  time: "14:25:00"
+  Assets:Cash    -69.00 CNY
+  Liabilities:Payable
+
+2016-09-10 * "姚沛然" "印制 TUNA 协会招新海报，姚沛然垫付" ^2016-fall-baituan
+  serial: "#18"
+  time: "21:53:00"
+  Liabilities:Payable   -69.00 CNY
+  Expenses:Operation
+
+2016-09-11 * "贴海报用工字钉，姚沛然" "贴海报用工字钉，姚沛然垫付" ^2016-fall-baituan
+  serial: "#19"
+  time: "21:10:00"
+  Liabilities:Payable  -12.40 CNY
+  Expenses:Operation
+
+2016-09-11 * "姚沛然" "招新物资：贴纸 100张＋100张＋100张，姚沛然垫付" ^2016-fall-baituan
+  serial: "#20"
+  time: "21:10:00"
+  Liabilities:Payable   -1057.00 CNY
+  Expenses:Operation
+
+2016-09-11 * "姚沛然" "招新物资：钥匙扣、胸章各50个，姚沛然垫付" ^2016-fall-baituan
+  serial: "#21"
+  time: "21:10:00"
+  Liabilities:Payable   -139.00 CNY
+  Expenses:Operation
+
+2016-09-14 * "康哥、大~~鸟~~鹰" "康哥、大~~鸟~~鹰捐赠"
+  serial: "#23"
+  time: "22:01:00"
+  Income:Donation  -1000.00 CNY
+  Assets:Cash
+
+2016-09-16 * "TUNA易拉宝，姚沛然" "TUNA易拉宝，姚沛然垫付" ^2016-fall-baituan
+  serial: "#22"
+  time: "14:11:00"
+  Liabilities:Payable   -80.00 CNY
+  Expenses:Operation
+
+2016-09-16 * "报销 #18 - #22" ^2016-fall-baituan
+  serial: "#24"
+  time: "14:36:00"
+  Assets:Cash    -1357.40 CNY
+  Liabilities:Payable
+
+2016-09-16 * "姚沛然" "SFD2016 海报及展板，姚沛然垫付" ^2016-sfd
+  serial: "#26"
+  time: "12:55:00"
+  Liabilities:Payable   -415.00 CNY
+  Expenses:Operation
+
+2016-09-18 * "大鹰" "大鹰捐赠"
+  serial: "#25"
+  time: "20:49:00"
+  Income:Donation  -500.00 CNY
+  Assets:Cash
+
+2016-09-20 * "奶牛老师、余欣健" "奶牛老师、余欣健捐赠"
+  serial: "#27"
+  time: "23:04:00"
+  Income:Donation  -1128.00 CNY
+  Assets:Cash
+
+2016-09-24 * "报销 #26" ^2016-sfd
+  serial: "#28"
+  time: "22:44:00"
+  Assets:Cash    -415.00 CNY
+  Liabilities:Payable
+
+2017-03-03 * "姚沛然" "招新物资：钥匙扣、胸章各50个，姚沛然垫付" ^2017-spring-baituan
+  serial: "#29"
+  time: "15:41:00"
+  Liabilities:Payable   -135.00 CNY
+  Expenses:Operation
+
+2017-03-03 * "姚沛然" "TUNA 易拉宝，姚沛然垫付" ^2017-spring-baituan
+  serial: "#30"
+  time: "15:42:00"
+  Liabilities:Payable   -80.00 CNY
+  Expenses:Operation
+
+2017-03-03 * "TUNA 传单，刘家昌" "TUNA 传单，刘家昌垫付" ^2017-spring-baituan
+  serial: "#31"
+  time: "15:57:00"
+  Liabilities:Payable   -50.00 CNY
+  Expenses:Operation
+
+2017-03-06 * "报销 #29 - #31" ^2017-spring-baituan
+  serial: "#32"
+  time: "09:35:00"
+  Assets:Cash    -265.00 CNY
+  Liabilities:Payable
+
+2017-09-06 * "惠轶群" "海报，惠轶群垫付" ^2017-fall-baituan
+  serial: "#41"
+  time: "08:38:47"
+  Liabilities:Payable   -60.00 CNY
+  Expenses:Operation
+
+2017-09-08 * "Fan Dang " "Fan Dang 捐赠"
+  serial: "#33"
+  time: "00:00:00"
+  Income:Donation  -17.11 CNY
+  Assets:Cash
+
+2017-09-27 * "刘家昌" "刘家昌捐赠用于易拉宝"
+  serial: "#34"
+  time: "15:26:00"
+  Income:Donation  -80.00 CNY
+  Assets:Cash
+
+2017-09-27 * "TUNA 2017 版易拉宝" ^2017-fall-baituan
+  serial: "#35"
+  time: "15:26:00"
+  Assets:Cash     -80.00 CNY
+  Expenses:Operation
+
+2017-09-28 * "陈晟祺" "TUNA 传单，陈晟祺垫付" ^2017-fall-baituan
+  serial: "#36"
+  time: "09:30:00"
+  Liabilities:Payable   -20.00 CNY
+  Expenses:Operation
+
+2017-09-29 * "陈晟祺" "招新后聚餐，陈晟祺垫付" ^2017-fall-baituan
+  serial: "#36"
+  time: "18:50:00"
+  Liabilities:Payable   -116.00 CNY
+  Expenses:Misc
+
+2017-09-29 * "报销 #36, #37" ^2017-fall-baituan
+  serial: "#38"
+  time: "11:56:00"
+  Assets:Cash    -136.00 CNY
+  Liabilities:Payable
+
+2017-09-29 * "刘家昌" "刘家昌捐赠用于 #38"
+  serial: "#39"
+  time: "14:12:00"
+  Income:Donation  -136.00 CNY
+  Assets:Cash
+
+2017-09-29 * "姚沛然" "贴纸，姚沛然垫付" ^2017-fall-baituan
+  seriel: "#40"
+  time: "18:50:00"
+  Liabilities:Payable   -700.00 CNY
+  Expenses:Operation
+
+2017-10-25 * "惠轶群" "海报及展板，惠轶群垫付" ^2017-fall-baituan
+  seriel: "#42"
+  time: "16:20:40"
+  Liabilities:Payable   -324.00 CNY
+  Expenses:Operation
+
+2017-10-26 * "Wen Qixiang " "Wen Qixiang 捐赠"
+  serial: "#43"
+  time: "16:30:00"
+  Income:Donation  -100.00 CNY
+  Assets:Cash
+
+2017-10-26 * "Chen Qingya " "Chen Qingya 捐赠"
+  serial: "#44"
+  time: "16:57:00"
+  Income:Donation  -100.00 CNY
+  Assets:Cash
+
+2017-10-28 * "报销 41-42" ^2017-fall-baituan
+  serial: "#45"
+  time: "15:16:00"
+  Assets:Cash    -384 CNY
+  Liabilities:Payable
+
+* TODO below
+
+2018-02-02 * "陈嘉杰" "陈嘉杰捐赠"
+  time: "17:49:00"
+  Income:Donation  -200.00 CNY
+  Assets:Cash
+
+2018-02-02 * "党凡" "党凡捐赠"
+  time: "21:25:00"
+  Income:Donation  -250.00 CNY
+  Assets:Cash
+
+2018-02-02 * "报销 #40"
+  time: "22:10:00"
+  Assets:Cash    -700.00 CNY
+  Liabilities:Payable
+
+2018-02-04 * "贴纸，姚沛然" "贴纸，姚沛然垫付"
+  time: "19:13:00"
+  Liabilities:Payable   -690.00 CNY
+  Expenses:Operation
+
+2018-02-04 * "钥匙扣，姚沛然" "钥匙扣，姚沛然垫付"
+  time: "19:13:00"
+  Liabilities:Payable   -135.00 CNY
+  Expenses:Operation
+
+2018-03-08 * "招新海报，姚沛然" "招新海报，姚沛然垫付"
+  time: "16:48:00"
+  Liabilities:Payable   -161.00 CNY
+  Expenses:Operation
+
+2018-05-25 * "报销 #49 #50 #51"
+  time: "17:18:00"
+  Assets:Cash    -986.00 CNY
+  Liabilities:Payable
+
+2018-05-25 * "康哥" "康哥捐赠"
+  time: "15:08:00"
+  Income:Donation      -20000.00 CNY
+  Assets:Cash:不干正事专用
+
+2018-05-25 * "杰哥" "杰哥捐赠"
+  time: "18:11:00"
+  Income:Donation  -1000.00 CNY
+  Assets:Cash
+
+2018-05-25 * "Pero " "Pero 捐赠"
+  time: "18:12:00"
+  Income:Donation  -1000.00 CNY
+  Assets:Cash
+
+2018-05-25 * "Fedora Release Party 海报，姚沛然" "Fedora Release Party 海报，姚沛然垫付"
+  time: "18:12:30"
+  Liabilities:Payable   -115.00 CNY
+  Expenses:Operation
+
+2018-05-25 * "报销 #56"
+  time: "18:13:00"
+  Assets:Cash    -115.00 CNY
+  Liabilities:Payable
+
+2018-05-25 * "党凡" "党凡捐赠"
+  time: "17:50:00"
+  Income:Donation  -200 CNY
+  Assets:Cash
+
+2018-06-04 * "6-1 紫操草坪炸鸡"
+  time: "18:43:00"
+  Assets:Cash:不干正事专用  -179 CNY
+  Expenses:Entertainment
+
+2018-06-30 * "6-30 中午尼古拉斯聚餐 @云海肴"
+  time: "13:35:00"
+  Assets:Cash:不干正事专用  -626 CNY
+  Expenses:Entertainment
+
+2018-09-05 * "党凡" "党凡捐赠"
+  time: "13:41:00"
+  Income:Donation  -1000.00 CNY
+  Assets:Cash
+
+2018-09-08 * "六边形贴纸，姚沛然" "六边形贴纸，姚沛然垫付"
+  time: "19:58:00"
+  Liabilities:Payable   -400.00 CNY
+  Expenses:Operation
+
+2018-09-08 * "报销 #62"
+  time: "19:58:00"
+  Assets:Cash    -400.00 CNY
+  Liabilities:Payable
+
+2018-09-08 * "9-8 晚 Tunight @盒子咖啡馆"
+  time: "21:03:00"
+  Assets:Cash:不干正事专用  -945.00 CNY
+  Expenses:Entertainment
+
+2018-09-21 * "招新及SFD海报、展板，姚沛然" "招新及SFD海报、展板，姚沛然垫付"
+  time: "16:25:00"
+  Liabilities:Payable   -633.50 CNY
+  Expenses:Operation
+
+2018-09-21 * "报销 #65"
+  time: "16:25:00"
+  Assets:Cash    -633.50 CNY
+  Liabilities:Payable
+
+2018-09-22 * "9-22 晚 SFD 聚餐 @五彩城"
+  time: "20:18:00"
+  Assets:Cash:不干正事专用  -1038.00 CNY
+  Expenses:Entertainment
+
+2018-10-02 * "易拉宝，姚沛然" "易拉宝，姚沛然垫付"
+  time: "11:20:00"
+  Liabilities:Payable   -110.00 CNY
+  Expenses:Operation
+
+2018-10-02 * "招新午饭外卖，姚沛然" "招新午饭外卖，姚沛然垫付"
+  time: "11:25:00"
+  Liabilities:Payable   -335.50 CNY
+  Expenses:Operation
+
+2018-10-05 * "报销 #67-68"
+  time: "23:42:00"
+  Assets:Cash    -445.50 CNY
+  Liabilities:Payable
+
+2018-10-12 * "徽章及钥匙扣，姚沛然" "徽章及钥匙扣，姚沛然垫付"
+  time: "21:24:00"
+  Liabilities:Payable   -135.00 CNY
+  Expenses:Operation
+
+2018-10-12 * "新版贴纸，姚沛然" "新版贴纸，姚沛然垫付"
+  time: "21:24:00"
+  Liabilities:Payable   -690.00 CNY
+  Expenses:Operation
+
+2018-10-13 * "报销 #71-72"
+  time: "17:16:00"
+  Expenses:Operation  -825.00 CNY
+  Liabilities:Payable
+
+2018-10-13 * "10-13 晚迎新前聚餐 @辣上瘾"
+  time: "18:53:00"
+  Assets:Cash:不干正事专用  -732.00 CNY
+  Expenses:Entertainment
+
+2018-10-18 * "10-18 晚聚餐 @巴依老爷，党凡" "10-18 晚聚餐 @巴依老爷，党凡垫付"
+  time: "22:59:00"
+  Liabilities:Payable     -474.00 CNY
+  Expenses:Entertainment
+
+2018-10-21 * "报销 #75"
+  time: "20:11:00"
+  Assets:Cash:不干正事专用  -474.00 CNY
+  Liabilities:Payable
+
+2018-10-21 * "10-20晚 tunight前聚餐 @澜园，姚沛然" "10-20晚 tunight前聚餐 @澜园，姚沛然垫付"
+  time: "20:18:00"
+  Liabilities:Payable     -196.00 CNY
+  Expenses:Entertainment
+
+2018-10-27 * "10-27 晚 tunight 前聚餐 @万人三"
+  time: "18:37:06"
+  Assets:Cash:不干正事专用  -383.00 CNY
+  Expenses:Entertainment
+
+2018-10-28 * "报销 #77"
+  time: "15:16:00"
+  Assets:Cash:不干正事专用  -196.00 CNY
+  Liabilities:Payable
+
+2018-11-03 * "11-03 晚 tunight 后聚餐 @柳叶刀"
+  time: "22:58:30"
+  Liabilities:Payable     -1062.00 CNY
+  Expenses:Entertainment
+
+2018-11-04 * "报销 #80"
+  time: "13:11:00"
+  Assets:Cash:不干正事专用  -1062.00 CNY
+  Liabilities:Payable
+
+2018-11-24 * "11-24 晚 tunight party @盒子咖啡馆"
+  time: "22:14:00"
+  Assets:Cash:不干正事专用  -1451.00 CNY
+  Expenses:Entertainment
+
+2018-12-13 * "从团委报销社团活动经费"
+  time: "10:04:00"
+  Income:University  -825.00 CNY
+  Assets:Cash
+
+2018-12-18 * "开徽章、贴纸发票，姚沛然" "开徽章、贴纸发票，姚沛然垫付"
+  time: "21:09:00"
+  Liabilities:Payable   -50.00 CNY
+  Expenses:Operation
+
+2018-12-18 * "12-18晚 TCP网络优化讨论，姚沛然" "12-18晚 TCP网络优化讨论，姚沛然垫付"
+  time: "21:11:00"
+  Liabilities:Payable     -43.00 CNY
+  Expenses:Entertainment
+
+2018-12-22 * "12-22 晚 站点比萨聚餐，党凡" "12-22 晚 站点比萨聚餐，党凡垫付"
+  time: "20:31:00"
+  Liabilities:Payable     -806.00 CNY
+  Expenses:Entertainment
+
+2018-12-30 * "报销 #84"
+  time: "15:09:00"
+  Assets:Cash    -50.00 CNY
+  Liabilities:Payable
+
+2018-12-30 * "报销 #85"
+  time: "15:09:00"
+  Assets:Cash:不干正事专用  -43.00 CNY
+  Liabilities:Payable
+
+2018-12-30 * "报销 #86"
+  time: "15:09:00"
+  Assets:Cash:不干正事专用  -806.00 CNY
+  Liabilities:Payable
+
+2019-02-23 * "02-23 晚，井格聚餐"
+  time: "19:20:16"
+  Assets:Cash:不干正事专用  -1860.00 CNY
+  Expenses:Entertainment
+
+2019-02-23 * "02-23 中午，外卖 党凡" "02-23 中午，外卖 党凡垫付"
+  time: "13:09:16"
+  Liabilities:Payable     -392.00 CNY
+  Expenses:Entertainment
+
+2019-02-23 * "02-23 蛋糕 党凡" "02-23 蛋糕 党凡垫付"
+  time: "13:09:16"
+  Liabilities:Payable     -148.00 CNY
+  Expenses:Entertainment
+
+2019-02-23 * "02-23 轰趴 刘晓义" "02-23 轰趴 刘晓义垫付"
+  time: "13:09:16"
+  Liabilities:Payable     -1380.00 CNY
+  Expenses:Entertainment
+
+2019-02-26 * "报销 #91 #92"
+  time: "20:50:00"
+  Assets:Cash:不干正事专用  -540.00 CNY
+  Liabilities:Payable
+
+2019-02-26 * "报销 #93"
+  time: "20:56:00"
+  Assets:Cash:不干正事专用  -1380.00 CNY
+  Liabilities:Payable
+
+2019-03-06 * "招新海报，刘一芃" "招新海报，刘一芃垫付"
+  time: "21:00:00"
+  Liabilities:Payable   -67.50 CNY
+  Expenses:Operation
+
+2019-07-07 * "07-07 TUNA 毕业聚餐 @玉树"
+  time: "10:22:00"
+  Liabilities:Payable     -511.00 CNY
+  Expenses:Entertainment
+
+2019-07-20 * "报销 #97"
+  time: "15:18:00"
+  Assets:Cash:不干正事专用  -511.00 CNY
+  Liabilities:Payable
+
+2019-08-22 * "报销  #96"
+  time: "07:30:00"
+  Assets:Cash    -67.50 CNY
+  Liabilities:Payable
+
+2019-08-22 * "垫付 Nano 钓鱼费用"
+  time: "07:30:00"
+  Assets:Cash    -298.00 CNY
+  Assets:Receivable
+
+2019-09-05 * "聚餐@五道口，续本达" "聚餐@五道口，续本达垫付"
+  time: "18:40:00"
+  Liabilities:Payable     -511.00 CNY
+  Expenses:Entertainment
+
+2019-09-09 * "开学前聚餐@玉树，余欣健" "开学前聚餐@玉树，余欣健垫付"
+  time: "19:00:00"
+  Liabilities:Payable     -573.00 CNY
+  Expenses:Entertainment
+
+2019-09-15 * "招新用贴纸印刷，陈晟祺" "招新用贴纸印刷，陈晟祺垫付"
+  time: "19:30:00"
+  Liabilities:Payable   -850.00 CNY
+  Expenses:Operation
+
+2019-09-20 * "晚饭招新聚餐570，党凡" "晚饭招新聚餐570，党凡垫付"
+  time: "19:00:00"
+  Liabilities:Payable     -570.00 CNY
+  Expenses:Entertainment
+
+2019-10-06 * "报销 #101"
+  time: "10:32:00"
+  Assets:Cash:不干正事专用  -511.00 CNY
+  Liabilities:Payable
+
+2019-10-06 * "报销 #102"
+  time: "10:32:00"
+  Assets:Cash:不干正事专用  -573.00 CNY
+  Liabilities:Payable
+
+2019-10-06 * "报销 #103"
+  time: "10:32:00"
+  Assets:Cash    -850.00 CNY
+  Liabilities:Payable
+
+2019-10-06 * "报销 #104"
+  time: "10:32:00"
+  Assets:Cash:不干正事专用  -570.00 CNY
+  Liabilities:Payable
+
+2019-10-11 * "庆祝 Harry 生日及送别党主席"
+  time: "18:09:00"
+  Assets:Cash:不干正事专用  -1385.00 CNY
+  Expenses:Entertainment
+
+2019-11-08 * "制作新易拉宝，陈晟祺" "制作新易拉宝，陈晟祺垫付"
+  time: "09:00:00"
+  Liabilities:Payable   -80.00 CNY
+  Expenses:Operation
+
+2019-12-13 * "小聚，党凡" "小聚，党凡垫付"
+  time: "20:00:00"
+  Liabilities:Payable     -658.00 CNY
+  Expenses:Entertainment
+
+2019-12-25 * "从团委报销社团活动经费"
+  time: "16:32:00"
+  Income:University  -630.00 CNY
+  Assets:Cash
+
+2019-12-26 * "报销 #110"
+  time: "15:38:00"
+  Assets:Cash    -80.00 CNY
+  Liabilities:Payable
+
+2019-12-26 * "报销 #111"
+  time: "15:38:00"
+  Assets:Cash:不干正事专用  -658.00 CNY
+  Liabilities:Payable
+
+2019-12-31 * "元旦晚聚餐"
+  time: "19:00:00"
+  Liabilities:Payable     -283.00 CNY
+  Expenses:Entertainment
+
+2020-01-17 * "报销 #115"
+  time: "14:13:00"
+  Assets:Cash:不干正事专用  -283.00 CNY
+  Liabilities:Payable
+
+2020-03-22 * "党凡" "党凡捐赠"
+  time: "13:30:00"
+  Income:Donation      -17500.00 CNY
+  Assets:Cash:不干正事专用
+
+2020-03-22 * "宇翔" "宇翔捐赠"
+  time: "13:30:00"
+  Income:Donation      -4378.80 CNY
+  Assets:Cash:不干正事专用
+
+2020-09-29 * "百团午餐，dram " "百团午餐，dram 垫付"
+  time: "12:30:00"
+  Liabilities:Payable     -144.00 CNY
+  Expenses:Entertainment
+
+2020-09-29 * "招新后聚餐，陈晟祺垫付 380，高一川" "招新后聚餐，陈晟祺垫付 380，高一川垫付 150"
+  time: "20:00:00"
+  Liabilities:Payable     -530.00 CNY
+  Expenses:Entertainment
+
+2020-09-30 * "百团午餐+奶茶，陈晟祺" "百团午餐+奶茶，陈晟祺垫付"
+  time: "12:30:00"
+  Liabilities:Payable     -143.50 CNY
+  Expenses:Entertainment
+
+2020-09-30 * "报销 #117、#118、#119"
+  time: "12:30:00"
+  Assets:Cash:不干正事专用  -817.50 CNY
+  Liabilities:Payable
+
+2020-10-16 * "Harry 生日聚餐@汤师父"
+  time: "21:02:00"
+  Assets:Cash:不干正事专用  -965.00 CNY
+  Expenses:Entertainment
+
+2020-11-01 * "谭浩强奖奖金"
+  time: "20:20:00"
+  Income:Awards      -4000.00 CNY
+  Assets:Cash:不干正事专用
+
+2021-04-04 * "清明节聚餐 @站点比萨"
+  time: "19:35:00"
+  Assets:Cash:不干正事专用  -811.00 CNY
+  Expenses:Entertainment
+
+2021-06-26 * "Pero 回国聚餐 @海簋蒸汽海鲜"
+  time: "14:45:00"
+  Assets:Cash:不干正事专用  -1677.30 CNY
+  Expenses:Entertainment
+
+2021-07-02 * "王邈、Aron、续本达" "王邈、Aron、续本达捐赠"
+  time: "17:00:00"
+  Income:Donation  -16800.00 CNY
+  Assets:Cash
+
+2021-07-03 * "咖啡馆小聚"
+  time: "21:40:00"
+  Liabilities:Payable     -3166.00 CNY
+  Expenses:Entertainment
+
+2021-08-08 * "移动 #121 用于支出"
+  time: "18:10:00"
+  Assets:Cash:不干正事专用  -17500.00 CNY
+  Assets:Cash
+
+2021-08-08 * "购买 8T SSD 5块，用于镜像站服务器"
+  time: "18:10:00"
+  Assets:Cash     -29481.47 CNY
+  Assets:Fixed
+
+2021-08-08 * "报销 #128"
+  time: "18:20:00"
+  Assets:Cash:不干正事专用  -3166.00 CNY
+  Liabilities:Payable
+
+2021-09-02 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠"
+  time: "22:00:00"
+  Income:Donation  -5000.00 CNY
+  Assets:Cash
+
+2021-09-02 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠"
+  time: "22:00:00"
+  Income:Donation      -5000.00 CNY
+  Assets:Cash:不干正事专用
+
+2021-09-24 * "百团招新工作餐 @麦当劳"
+  time: "12:00:00"
+  Liabilities:Payable     -226.80 CNY
+  Expenses:Entertainment
+
+2021-09-24 * "百团招新后聚餐 @筑底食堂"
+  time: "20:00:00"
+  Liabilities:Payable     -823.00 CNY
+  Expenses:Entertainment
+
+2021-09-25 * "报销 #134、#135"
+  time: "11:00:00"
+  Assets:Cash:不干正事专用  -1049.80 CNY
+  Liabilities:Payable
+
+2021-10-26 * "集体生日会 @甲所餐厅"
+  time: "18:00:00"
+  Liabilities:Payable     -695.00 CNY
+  Expenses:Entertainment
+
+2021-10-26 * "集体生日会 @诺心蛋糕"
+  time: "18:00:00"
+  Liabilities:Payable     -218.00 CNY
+  Expenses:Entertainment
+
+2021-10-29 * "报销 #137、#138"
+  time: "23:20:00"
+  Assets:Cash:不干正事专用  -913.00 CNY
+  Liabilities:Payable
+
+2021-11-05 * "Felix Yan 代 PLCT " "Felix Yan 代 PLCT 捐赠（不限用途）"
+  time: "16:00:00"
+  Income:Donation  -5000.00 CNY
+  Assets:Cash
+
+2022-03-03 * "2022 春百团招新工作餐"
+  time: "12:00:00"
+  Liabilities:Payable     -444.50 CNY
+  Expenses:Entertainment
+
+2022-03-14 * "报销 #141"
+  time: "12:15:00"
+  Assets:Cash:不干正事专用  -444.50 CNY
+  Liabilities:Payable
+
+2022-06-22 * "毕业聚餐 @甲所"
+  time: "21:00:00"
+  Liabilities:Payable     -2077.00 CNY
+  Expenses:Entertainment
+
+2022-06-22 * "毕业证书印刷与封皮"
+  time: "21:30:00"
+  Liabilities:Payable   -175.00 CNY
+  Expenses:Operation
+
+2022-07-05 * "报销 #143"
+  time: "23:30:00"
+  Assets:Cash:不干正事专用  -2077.00 CNY
+  Liabilities:Payable
+
+2022-07-05 * "报销 #144"
+  time: "23:30:00"
+  Assets:Cash    -175.00 CNY
+  Liabilities:Payable
+
+2022-07-06 * "从团委报销 #144"
+  time: "16:32:00"
+  Income:University  -175.00 CNY
+  Assets:Receivable
+
+2022-09-23 * "2022 秋百团招新工作餐"
+  time: "14:46:00"
+  Liabilities:Payable     -784.48 CNY
+  Expenses:Entertainment
+
+2022-09-24 * "迎新会聚餐 @丰茂烤串"
+  time: "22:36:00"
+  Liabilities:Payable     -1265.00 CNY
+  Expenses:Entertainment
+
+2022-09-27 * "报销 #148、#149"
+  time: "14:20:00"
+  Assets:Cash:不干正事专用  -2049.48 CNY
+  Liabilities:Payable
+
+2022-12-27 * "shanker " "shanker 捐赠"
+  time: "17:20:00"
+  Income:Donation      -256.90 CNY
+  Assets:Cash:不干正事专用
+
+2023-02-04 * "TUNA 上海聚餐"
+  time: "22:09:00"
+  Assets:Cash:不干正事专用  -1546.00 CNY
+  Expenses:Entertainment
+
+2023-03-05 * "移动 #140 用于支出"
+  time: "18:10:00"
+  Assets:Cash         -5000.00 CNY
+  Assets:Cash:不干正事专用
+
+2023-03-05 * "2023 春百团招新工作餐，Pwe " "2023 春百团招新工作餐，Pwe 垫付"
+  time: "18:10:00"
+  Assets:Cash:不干正事专用  -1681.60 CNY
+  Expenses:Entertainment
+
+2023-03-05 * "迎新会聚餐 @日昌，Pwe " "迎新会聚餐 @日昌，Pwe 垫付"
+  time: "18:10:00"
+  Assets:Cash:不干正事专用  -1794.49 CNY
+  Expenses:Entertainment
+
+2023-03-05 * "Pwe " "Pwe 捐赠"
+  time: "18:30:00"
+  Income:Donation      -3000.00 CNY
+  Assets:Cash:不干正事专用
+
+2023-06-24 * "2023 毕业聚餐 @基辅罗斯"
+  time: "20:55:00"
+  Assets:Cash:不干正事专用  -1620.00 CNY
+  Expenses:Entertainment
+
+2023-09-28 * "2023 秋百团摊位工作餐"
+  time: "13:00:00"
+  Liabilities:Payable     -764.80 CNY
+  Expenses:Entertainment
+
+2023-09-30 * "2023 秋季百团聚餐 @甲所"
+  time: "21:22:00"
+  Assets:Cash:不干正事专用  -1111.20 CNY
+  Expenses:Entertainment
+
+2023-11-06 * "2023 夏季 tunaive 囤货 + 补差价"
+  time: "15:00:00"
+  Liabilities:Payable   -425.00 CNY
+  Expenses:Operation
+
+2023-11-06 * "报销 #159、#160"
+  time: "15:53:00"
+  Assets:Cash:不干正事专用  -1189.80 CNY
+  Liabilities:Payable
+
+2024-02-29 * "2024 春季百团易拉宝，喵喵" "2024 春季百团易拉宝，喵喵垫付"
+  time: "18:48:00"
+  Liabilities:Payable   -160.00 CNY
+  Expenses:Operation
+
+2024-03-07 * "2024 春季百团摊位工作餐，喵喵" "2024 春季百团摊位工作餐，喵喵垫付"
+  time: "12:00:00"
+  Liabilities:Payable     -572.10 CNY
+  Expenses:Entertainment
+
+2024-10-12 * "Tunight 后聚餐（丰茂烤串），@Harry " "Tunight 后聚餐（丰茂烤串），@Harry 垫付"
+  time: "23:00:00"
+  Liabilities:Payable     -663.60 CNY
+  Expenses:Entertainment
+
+
