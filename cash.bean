@@ -45,7 +45,7 @@ plugin "beancount.plugins.tag_pending"
   Assets:Receivable  -2000.00 CNY
   Assets:Cash
 
-2021-08-08 commodity Seagate-HDD-4TB
+2021-08-08 commodity SEA-HDD-4TB
   name: "Seagate 4TB HDD"
   serial: "S1Z1LKNP"
   holder: "@shankerwangmiao"
@@ -55,7 +55,7 @@ plugin "beancount.plugins.tag_pending"
   serial: "#2"
   time: "14:47:00"
   Assets:Cash     -1350.00 CNY
-  Equity:Fixed           1 Seagate-HDD-4TB { 1350.00 CNY }
+  Equity:Fixed           1 SEA-HDD-4TB { 1350.00 CNY }
 
 2016-03-22 * "Haskell 讲座海报，大鹰" "Haskell 讲座海报，大鹰垫付" ^2016-haskell
   serial: "#3"
