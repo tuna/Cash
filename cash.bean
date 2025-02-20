@@ -1042,4 +1042,19 @@ plugin "beancount.plugins.tag_pending"
   Liabilities:Payable     -663.60 CNY
   Expenses:Entertainment
 
+2025-02-20 commodity WD-SA510-500G
+  name: "Western Digital SA510 500GB SSD"
+  holder: "alfa-mirrors"
+  asset-class: "device"
 
+2025-02-20 commodity MICRON-5300PRO-480G
+  name: "Micron 5300Pro 480GB SSD"
+  holder: "alfa-mirrors"
+  asset-class: "device"
+
+2025-02-20 * "陈晟祺" "alfa 服务器替换硬盘，陈晟祺 垫付"
+  serial: "#165"
+  time: "15:00:00"
+  Liabilities:Payable
+  Equity:Fixed           1 WD-SA510-500G { 319.00 CNY }
+  Equity:Fixed           1 MICRON-5300PRO-480G { 288.00 CNY }
