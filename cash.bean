@@ -1042,4 +1042,15 @@ plugin "beancount.plugins.tag_pending"
   Liabilities:Payable     -663.60 CNY
   Expenses:Entertainment
 
+2025-02-22 * "报销 #162、#163"
+  serial: "#165"
+  time: "10:11:00"
+  Assets:Cash    -732.1 CNY
+  Liabilities:Payable
+
+2025-02-22 * "报销 #164"
+  serial: "#165"
+  time: "10:15:00"
+  Assets:Cash:不干正事专用    -663.60 CNY
+  Liabilities:Payable
 
