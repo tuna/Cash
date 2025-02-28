@@ -1054,3 +1054,33 @@ plugin "beancount.plugins.tag_pending"
   Assets:Cash:不干正事专用    -663.60 CNY
   Liabilities:Payable
 
+2024-08-30 * "聚餐 喵喵垫付"
+  serial: "#166"
+  time: "18:40:00"
+  Liabilities:Payable     -509.00 CNY
+  Expenses:Entertainment
+
+2024-09-20 * "2024 秋季百团工作餐 喵喵垫付"
+  serial: "#167"
+  time: "00:00:00"
+  Liabilities:Payable     -535.00 CNY
+  Expenses:Entertainment
+
+2025-02-28 * "2025 春季百团工作餐 喵喵垫付"
+  serial: "#168"
+  time: "00:00:00"
+  Liabilities:Payable     -335.80 CNY
+  Expenses:Entertainment
+
+2025-02-28 * "匿名捐赠"
+  serial: "#169"
+  time: "00:00:00"
+  Assets:Cash:不干正事专用  +4000.00 CNY
+  Income:Donation
+
+2025-02-28 * "喵喵捐赠 扣除 #166 #167 #168"
+  serial: "#170"
+  time: "00:00:00"
+  Income:Donation         -2560.00 CNY
+  Liabilities:Payable     +1379.8 CNY
+  Assets:Cash:不干正事专用
