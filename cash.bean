@@ -5,7 +5,9 @@
 option "title" "TUNA Cash Ledger"
 option "operating_currency" "CNY"
 option "infer_tolerance_from_cost" "True"
-option "inferred_tolerance_default" "CNY:0.05"
+option "inferred_tolerance_default" "CNY:0.01"
+option "tolerance_multiplier" "1.1"
+option "account_rounding" "Equity:RoundingError"
 option "insert_pythonpath" "True"
 
 plugin "beancount.plugins.tag_pending"
@@ -30,6 +32,7 @@ plugin "beancount.plugins.tag_pending"
 
 2000-01-01 open Equity:Bad ; 坏账
 2000-01-01 open Equity:Fixed ; 固定资产
+2000-01-01 open Equity:RoundingError
 
 * Contents
 
@@ -836,6 +839,7 @@ plugin "beancount.plugins.tag_pending"
   time: "18:10:00"
   Assets:Cash     -29481.47 CNY
   Equity:Fixed            5 EVO-870-8TB { 5896.30 CNY }
+  Equity:RoundingError
 
 2021-08-08 * "报销 #128"
   serial: "#131"
