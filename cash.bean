@@ -5,7 +5,7 @@
 option "title" "TUNA Cash Ledger"
 option "operating_currency" "CNY"
 option "infer_tolerance_from_cost" "True"
-option "inferred_tolerance_default" "CNY:0.1"
+option "inferred_tolerance_default" "CNY:0.05"
 option "insert_pythonpath" "True"
 
 plugin "beancount.plugins.tag_pending"
@@ -915,12 +915,11 @@ plugin "beancount.plugins.tag_pending"
   Liabilities:Payable     -2077.00 CNY
   Expenses:Entertainment
 
-2022-06-22 * "毕业证书印刷与封皮"
+2022-06-22 * "毕业证书印刷与封皮（垫付）"
   serial: "#144"
   time: "21:30:00"
-  Liabilities:Payable   -175.00 CNY
-  ; Expenses:Operation
-  Assets:Receivable ; 全部待学校报销
+  Expenses:Operation 175.00 CNY
+  Liabilities:Payable
 
 2022-07-05 * "报销 #143"
   serial: "#145"
@@ -931,7 +930,7 @@ plugin "beancount.plugins.tag_pending"
 2022-07-05 * "报销 #144"
   serial: "#146"
   time: "23:30:00"
-  Assets:Cash    -175.00 CNY
+  Assets:Receivable    -175.00 CNY ; 待学校报销
   Liabilities:Payable
 
 2022-07-06 * "从团委报销 #144"
@@ -1054,33 +1053,40 @@ plugin "beancount.plugins.tag_pending"
   Assets:Cash:不干正事专用    -663.60 CNY
   Liabilities:Payable
 
-2024-08-30 * "聚餐 喵喵垫付"
+2024-08-30 * "喵喵" "聚餐 喵喵垫付"
   serial: "#166"
   time: "18:40:00"
   Liabilities:Payable     -509.00 CNY
   Expenses:Entertainment
 
-2024-09-20 * "2024 秋季百团工作餐 喵喵垫付"
+2024-09-20 * "喵喵" "2024 秋季百团工作餐 喵喵垫付"
   serial: "#167"
   time: "00:00:00"
   Liabilities:Payable     -535.00 CNY
   Expenses:Entertainment
 
-2025-02-28 * "2025 春季百团工作餐 喵喵垫付"
+2025-02-28 * "喵喵" "2025 春季百团工作餐 喵喵垫付"
   serial: "#168"
   time: "00:00:00"
   Liabilities:Payable     -335.80 CNY
   Expenses:Entertainment
 
-2025-02-28 * "匿名捐赠"
+2025-02-28 * "匿名" "捐赠"
   serial: "#169"
   time: "00:00:00"
   Assets:Cash:不干正事专用  +4000.00 CNY
   Income:Donation
 
-2025-02-28 * "喵喵捐赠 扣除 #166 #167 #168"
+2025-02-28 * "喵喵" "捐赠 扣除 #166 #167 #168"
   serial: "#170"
   time: "00:00:00"
   Income:Donation         -2560.00 CNY
   Liabilities:Payable     +1379.8 CNY
   Assets:Cash:不干正事专用
+
+2025-02-28 * "陈晟祺" "2025 春季百团后聚餐（牛麒荟）"
+  serial: "#171"
+  time: "19:58:40"
+  Liabilities:Payable     -800.00 CNY
+  Expenses:Entertainment
+
