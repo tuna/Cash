@@ -1094,3 +1094,8 @@ plugin "beancount.plugins.tag_pending"
   Liabilities:Payable     -800.00 CNY
   Expenses:Entertainment
 
+2026-04-29 * "陈晟祺" "Tunight 前聚餐（安妮）"
+  serial: "#172"
+  time: "18:50:20"
+  Liabilities:Payable     -513.00 CNY
+  Expenses:Entertainment
