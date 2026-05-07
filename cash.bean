@@ -1099,3 +1099,18 @@ plugin "beancount.plugins.tag_pending"
   time: "18:50:20"
   Liabilities:Payable     -513.00 CNY
   Expenses:Entertainment
+
+2025-09-26 * "喵喵" "2025 秋季百团 工作餐"
+  serial: "#173"
+  Liabilities:Payable     -87.8 CNY
+    Expenses:Entertainment
+
+2026-03-20 * "喵喵" "2026 春季百团 工作餐"
+  serial: "#174"
+  Liabilities:Payable     -121.3 CNY
+  Expenses:Entertainment
+
+2026-04-24 * "喵喵" "Tunight 前聚餐（Papa Dalino）"
+  serial: "#175"
+  Liabilities:Payable     -1251.00 CNY
+  Expenses:Entertainment
